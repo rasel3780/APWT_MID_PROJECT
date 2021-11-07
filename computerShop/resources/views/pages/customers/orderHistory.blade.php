@@ -31,7 +31,4 @@
 
 @endforeach
 
-
-
-
 @endsection

@@ -7,6 +7,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\welcomeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SellController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,9 +64,8 @@ Route::post('/employee/edit',[EmployeeController::class,'editSubmit'])->name('em
 Route::get('/employee/delete/{id}/{eName}',[EmployeeController::class,'deleteEmp']);
 Route::get('/employee/dash',[EmployeeController::class,'empDash'])->name('empDash');
 Route::get('/admin/dash',[EmployeeController::class,'adminDash'])->name('adminDash');
-
-
-
+Route::get('/processinglist',[SellController::class,'processingList'])->name('processing.list');
+Route::get('/ordered/{id}',[SellController::class,'updateStatus'])->name('ordered');
 //Orders
 Route::get('/order/Cart',[OrderController::class,'cart'])->name('order.cart');
 Route::get('/addtoCart/{id}',[OrderController::class,'addtoCart'])->name('addtocart');
